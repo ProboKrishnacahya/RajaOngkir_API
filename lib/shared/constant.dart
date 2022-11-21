@@ -16,4 +16,5 @@ class Style {
   static Color red500 = Colors.red;
   static Color transparent = Colors.transparent;
   static Color white = Colors.white;
+  static Color yellow500 = Colors.yellow;
 }

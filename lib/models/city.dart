@@ -1,7 +1,8 @@
 part of 'models.dart';
 
 class City extends Equatable {
-  final String? cityId;
+  final String? originCityId;
+  final String? destinationCityId;
   final String? provinceId;
   final String? province;
   final String? type;
@@ -9,7 +10,8 @@ class City extends Equatable {
   final String? postalCode;
 
   const City({
-    this.cityId,
+    this.originCityId,
+    this.destinationCityId,
     this.provinceId,
     this.province,
     this.type,
@@ -18,7 +20,8 @@ class City extends Equatable {
   });
 
   factory City.fromJson(Map<String, dynamic> json) => City(
-        cityId: json['city_id'] as String?,
+        originCityId: json['city_id'] as String?,
+        destinationCityId: json['city_id'] as String?,
         provinceId: json['province_id'] as String?,
         province: json['province'] as String?,
         type: json['type'] as String?,
@@ -27,7 +30,8 @@ class City extends Equatable {
       );
 
   Map<String, dynamic> toJson() => {
-        'city_id': cityId,
+        'origin_city_id': originCityId,
+        'destination_city_id': destinationCityId,
         'province_id': provinceId,
         'province': province,
         'type': type,
@@ -36,7 +40,8 @@ class City extends Equatable {
       };
 
   City copyWith({
-    String? cityId,
+    String? originCityId,
+    String? destinationCityId,
     String? provinceId,
     String? province,
     String? type,
@@ -44,7 +49,8 @@ class City extends Equatable {
     String? postalCode,
   }) {
     return City(
-      cityId: cityId ?? this.cityId,
+      originCityId: originCityId ?? this.originCityId,
+      destinationCityId: destinationCityId ?? this.destinationCityId,
       provinceId: provinceId ?? this.provinceId,
       province: province ?? this.province,
       type: type ?? this.type,
@@ -59,7 +65,8 @@ class City extends Equatable {
   @override
   List<Object?> get props {
     return [
-      cityId,
+      originCityId,
+      destinationCityId,
       provinceId,
       province,
       type,
